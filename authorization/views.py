@@ -13,7 +13,7 @@ class RegisterView(APIView):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"message": "Регистрация прошла успешно"}, status=status.HTTP_201_CREATED)
+            return Response({"success": True}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class TokenView(TokenObtainPairView):

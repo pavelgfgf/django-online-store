@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'authorization',
+    'categories',
+    'listproducts',
 ]
 
 AUTH_USER_MODEL = 'authorization.CustomUser'
@@ -67,7 +69,7 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5174'
+    'http://localhost:5173'
 ]
 
 ROOT_URLCONF = 'store.urls'

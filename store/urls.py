@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from authorization.views import RegisterView, TokenView
+from categories.views import CategoriesView
+from listproducts.views import ListProductView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/register', RegisterView.as_view()),
-    path('api/login', TokenView.as_view()),
+    path('api/registration', RegisterView.as_view()),
+    path('api/auth', TokenView.as_view()),
+    path('api/categories', CategoriesView.as_view()),
+    path('api/categories/<int:pk>/products', ListProductView.as_view()),
 ]

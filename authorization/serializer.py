@@ -21,9 +21,6 @@ class RegisterSerializer(serializers.ModelSerializer):
 class TokenSerializer(TokenObtainPairSerializer): 
     def validate(self, attrs):
         data = super().validate(attrs)
-
         data.pop('refresh', None)
-
         data['token'] = data.pop('access')
-
         return data
