@@ -18,12 +18,16 @@ from django.contrib import admin
 from django.urls import path
 from authorization.views import RegisterView, TokenView
 from categories.views import CategoriesView
-from listproducts.views import ListProductView
+from listproducts.views import ListProductDetails
+from products.views import ProductDetails
+from buyproduct.views import BuyProductList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/registration', RegisterView.as_view()),
     path('api/auth', TokenView.as_view()),
     path('api/categories', CategoriesView.as_view()),
-    path('api/categories/<int:pk>/products', ListProductView.as_view()),
+    path('api/categories/<int:pk>/products', ListProductDetails.as_view()),
+    path('api/products/<int:pk>', ProductDetails.as_view()),
+    path('api/products/<int:pk>/buy', BuyProductList.as_view()),
 ]
