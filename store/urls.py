@@ -21,6 +21,7 @@ from categories.views import CategoriesView
 from listproducts.views import ListProductDetails
 from products.views import ProductDetails
 from buyproduct.views import BuyProductList
+from ads.views import AdList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +31,5 @@ urlpatterns = [
     path('api/categories/<int:pk>/products', ListProductDetails.as_view()),
     path('api/products/<int:pk>', ProductDetails.as_view()),
     path('api/products/<int:pk>/buy', BuyProductList.as_view()),
+    path('api/ads', AdList.as_view()),
 ]

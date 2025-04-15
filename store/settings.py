@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'categories',
     'listproducts',
     'products',
-    'buyproduct'
+    'buyproduct',
+    'ads'
 ]
 
 AUTH_USER_MODEL = 'authorization.CustomUser'
